@@ -1,0 +1,47 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.68 (7238) x86_64-apple-darwin13.4.0]
+
+[Workspace restored from /Users/emilyosborne/.RData]
+[History restored from /Users/emilyosborne/.Rapp.history]
+
+> dat <- data.frame(species = c("S.altissima", "S.rugosa", "E.graminifolia", "A.pilosus"), treatment = factor(c("Control", "Water", "Control", "Water")), height = c(1.1, 0.8, 0.9, 1), width = c(1, 1.7, 0.6, 0.2))
+> dat
+         species treatment height width
+1    S.altissima   Control    1.1   1.0
+2       S.rugosa     Water    0.8   1.7
+3 E.graminifolia   Control    0.9   0.6
+4      A.pilosus     Water    1.0   0.2
+> dat[2, ]
+   species treatment height width
+2 S.rugosa     Water    0.8   1.7
+> dat[3, 4]
+[1] 0.6
+> dat[, 2] == "Water"
+[1] FALSE  TRUE FALSE  TRUE
+> dat[dat[, 2] == "Water", ]
+    species treatment height width
+2  S.rugosa     Water    0.8   1.7
+4 A.pilosus     Water    1.0   0.2
+> subset(dat, treatment == "Water")
+    species treatment height width
+2  S.rugosa     Water    0.8   1.7
+4 A.pilosus     Water    1.0   0.2
+> 
